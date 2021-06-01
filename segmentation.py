@@ -10,7 +10,7 @@ model = torchvision.models.detection.maskrcnn_resnet50_fpn(pretrained=True)
 class Model:
     def __init__(self,confidence_thresh=0.6):
         self.model = torchvision.models.detection.maskrcnn_resnet50_fpn(pretrained=True)
-        self.model.eval();
+        self.model.eval()
         self.transform = T.Compose([T.ToTensor()])
         self.conf_thresh = confidence_thresh
         
