@@ -5,11 +5,7 @@ import numpy as np
 import cv2
 import requests
 
-
-
 model = torchvision.models.detection.maskrcnn_resnet50_fpn(pretrained=True)
-
-
 
 class Model:
     def __init__(self,confidence_thresh=0.6):
@@ -29,7 +25,6 @@ class Model:
 #         outputs = [(pred[0]['masks'][i][0],pred[0]['labels'][i]) for i in range(len(pred[0]['boxes'])) if pred[0]['scores'][i]>self.conf_thresh]
         
         return outputs
-        
         
 
 class Preprocessing:
@@ -62,8 +57,4 @@ class Preprocessing:
         trimap[bg_giver == 0, 0] = 1
         
         return trimap
-        
-        
-        
-
 
