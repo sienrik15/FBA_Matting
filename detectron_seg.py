@@ -13,9 +13,9 @@ import cv2
 class Model:
     def __init__(self,confidence_thresh=0.6):
         cfg = get_cfg()
-        cfg.merge_from_file(model_zoo.get_config_file("COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml"))
+        cfg.merge_from_file(model_zoo.get_config_file("COCO-InstanceSegmentation/mask_rcnn_R_50_C4_1x.yaml")) #COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml
         cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = confidence_thresh  # set threshold for this model
-        cfg.MODEL.WEIGHTS = model_zoo.get_checkpoint_url("COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml")
+        cfg.MODEL.WEIGHTS = model_zoo.get_checkpoint_url("COCO-InstanceSegmentation/mask_rcnn_R_50_C4_1x.yaml")
         self.model = DefaultPredictor(cfg)
 
 
